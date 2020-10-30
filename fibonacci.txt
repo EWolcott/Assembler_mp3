@@ -1,0 +1,28 @@
+TITLE MASM Template	(main.asm)
+; Description:    Number Value Program 
+; Authors: Abhilash Singh, Ethan Wolcott        
+; Date:  10/25/2020         
+INCLUDE Irvine32.inc    
+
+.data
+count DWORD 5 ;create a variable "count" with value 5
+array DWORD 7 DUP (1,1,?,?,?,?,?) ; sets aside memory for 7 duplicates of that array
+.code
+main PROC
+
+  mov ecx, count ; move 5 to the loop register
+  mov ESI, OFFSET array ; assigns the memory space value to esi
+  Add ESI, TYPE array ; adds the byte size of the array to esi
+  Add ESI, TYPE array ; adds the byte size of the array to esi
+
+  L1:
+ MOV EAX,[ESI-4] ; move the last number in the array to eax
+ MOV EBX,[ESI-8] ; move the second to last number in the array to ebx
+ ADD EAX,EBX ; add the two numbers in eax and ebx
+ MOV [ESI],EAX ; move the sum into esi at the lowest open variable position
+ ADD ESI, TYPE array ; add the byte value of the next variable to the esi register to essentially move the cursor to the next position up
+  Loop L1 ; loop until ecx is 0
+
+INVOKE ExitProcess,0
+main ENDP
+END main

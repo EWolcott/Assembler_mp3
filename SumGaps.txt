@@ -1,0 +1,38 @@
+; Description: A program that scans a sorted array, summing up the gaps between successive elements. 
+; Authors:    Ethan James Wolcott and Abhilash Singh
+; Date: 20th October, 2020
+
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess PROTO, dwExitCode:DWORD
+.data
+
+
+array DWORD 1, 3, 5, 7, 9
+
+.code
+
+main PROC
+
+mov esi, 0  			; initialize index register
+mov ecx, LENGTHOF array		; loop counter
+dec ecx
+mov ebx, 0 			 ;start sum at 0 
+
+
+L1:
+mov eax, array[esi+4]		;move item i+1 into ebx
+
+sub eax, array[esi]		;move iten i into eax
+
+add ebx,eax			;or, sum=sum-prev, then sum=sum+this
+add esi, 4
+
+loop L1				; repeat until ecx is 0
+
+INVOKE ExitProcess, 0 		;invoking Exit
+
+main ENDP 			;end of main
+
+END main 			;end of code
