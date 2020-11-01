@@ -1,6 +1,6 @@
 TITLE MASM Template	(main.asm)
 ; Description:    Number Value Program 
-; Authors: Abhilash Singh, Ethan Wolcott        
+; Authors: Ethan Wolcott        
 ; Date:  10/25/2020         
 INCLUDE Irvine32.inc    
 

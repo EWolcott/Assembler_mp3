@@ -1,5 +1,5 @@
 ; Description: A program that uses variables and MOV instructions to copy a value from a global variable named bigEndian to another global variable named littleEndian 
-; Authors:    Ethan James Wolcott and Abhilash Singh
+; Authors:    Ethan James Wolcott
 ; Date: 20th October, 2020       
 
 

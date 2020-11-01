@@ -1,5 +1,5 @@
 ; Description: A program that scans a sorted array, summing up the gaps between successive elements. 
-; Authors:    Ethan James Wolcott and Abhilash Singh
+; Authors:    Ethan James Wolcott
 ; Date: 20th October, 2020
 
 .386
